@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Order</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f4f4f4; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); width: 300px; }
+        input, select, button { width: 100%; padding: 8px; margin: 5px 0; }
+        button { background-color: #4caf50; color: #fff; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Order Cake</h2>
+        <select id="cakeType">
+            <option value="choco">Chocolate</option>
+            <option value="vanilla">Vanilla</option>
+            <option value ="ButterScotch">ButterScotch</option>
+        </select>
+        <input type="number" id="quantity" placeholder="Quantity" min="1">
+        <textarea id="message" placeholder="Special message"></textarea>
+        <button onclick="placeOrder()">Order</button>
+    </div>
+
+    <script>
+        function placeOrder() {
+            var type = document.getElementById('cakeType').value;
+            var quantity = document.getElementById('quantity').value;
+            var message = document.getElementById('message').value;
+            alert(`Order placed:\nType: ${type}\nQuantity: ${quantity}\nMessage: ${message}`);
+        }
+    </script>
+</body>
+</html>
