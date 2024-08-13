@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 15px;
+            margin: 15px auto;
+            width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .success-message {
+            color: green;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Library Management System</h1>
+
+    <div id="success-message" class="success-message"></div>
+
+    <form onsubmit="handleSubmit(event, 'Book added successfully')">
+        <h2>Add Book</h2>
+        <label>Title:</label>
+        <input type="text" required>
+        <label>Author:</label>
+        <input type="text" required>
+        <label>Quantity:</label>
+        <input type="number" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <form onsubmit="handleSubmit(event, 'Payment successful')">
+        <h2>Make Payment</h2>
+        <label>Member ID:</label>
+        <input type="text" required>
+        <label>Amount:</label>
+        <input type="number" required>
+        <button type="submit">Make Payment</button>
+    </form>
+
+    <form onsubmit="handleSubmit(event, 'Book returned successfully')">
+        <h2>Return Book</h2>
+        <label>Book ID:</label>
+        <input type="text" required>
+        <button type="submit">Return Book</button>
+    </form>
+
+    <form onsubmit="handleSubmit(event, 'Book canceled successfully')">
+        <h2>Cancel Book</h2>
+        <label>Book ID:</label>
+        <input type="text" required>
+        <button type="submit">Cancel Book</button>
+    </form>
+
+    <form onsubmit="handleSubmit(event, 'Books ordered successfully')">
+        <h2>Order New Books</h2>
+        <label>Books to Order:</label>
+        <textarea required></textarea>
+        <button type="submit">Order Books</button>
+    </form>
+
+    <script>
+        function handleSubmit(event, message) {
+            event.preventDefault();
+            document.getElementById('success-message').innerText = message;
+            setTimeout(() => {
+                document.getElementById('success-message').innerText = '';
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
